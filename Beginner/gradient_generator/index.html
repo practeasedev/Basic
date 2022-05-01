@@ -1,0 +1,37 @@
+<!-- Gradient Generator (BASIC PROJECT) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Generator</title>
+    <!-- linking google fonts : Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- linking style sheets -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Linking js script files -->
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="gradient_generator__title">Gradient Generator</h1>
+        <div class="gradient_generator__preview"></div>
+        <form class="gradient_generator__form">
+            <div class="gradient_generator__color_inputs">
+                <div class="form_field">
+                    <label for="color1">Color1</label>
+                    <input type="color" id="color1" value="#000000">
+                </div>
+                <div class="form_field">
+                    <label for="color2">Color2</label>
+                    <input type="color" id="color2" value="#FFFFFF">
+                </div>
+            </div>
+            <input type="submit" value="Generate Gradient" class="gradient_generator__generate_button">
+        </form>
+    </div>
+</body>
+</html>

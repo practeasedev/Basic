@@ -1,0 +1,31 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.table{
+	margin:auto;
+}
+
+.table__head,.table__data{
+	text-align: left;
+	width: 150px;
+	padding: 1em;
+	font-family: Poppins;
+}
+
+.table__head{
+	background-color: #E5E5E5;
+}
+
+.table__row:nth-child(even){
+	background-color: #E5E5E5;
+}
+

@@ -1,0 +1,108 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+}
+
+.hover_animations__container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width:60%;
+    height:50%;
+    gap:2rem;
+}
+
+.hover_animation__card{
+    box-shadow: 0 0 4px 0 #888888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hover_animation__card h2{
+    cursor:pointer;
+}
+
+.hover_animation_1{
+    transition: color 0.3s ease-in-out;
+}
+
+.hover_animation_1:hover{
+    color:#FF3939;
+}
+
+.hover_animation_2{
+    transition: transform 0.2s ease-in-out
+}
+
+.hover_animation_2:hover{
+    transform: scale(1.1);
+}
+
+.hover_animation_3{
+    position: relative;
+}
+
+.hover_animation_3::before{
+    content:'';
+    width:0;
+    height:0.25rem;
+    border-radius: 1rem;
+    position: absolute;
+    background-color: black;
+    bottom:-2px;
+    transition:width 0.3s ease-in-out ;
+}
+
+.hover_animation_3:hover::before{
+    width:100%;
+}
+
+.hover_animation_4{
+    position: relative;
+}
+
+.hover_animation_4::before{
+    content:"";
+    width:0.2rem;
+    height:100%;
+    border-radius: 1rem;
+    position: absolute;
+    background-color: red;
+    left:-0.6rem;
+    top:0;
+    transition:all 0.3s ease-in-out ;
+    transform:translateX(0.5rem);
+    opacity:0;
+}
+
+.hover_animation_4:hover::before{
+    opacity: 1;
+    transform:translateX(0);
+}
+
+.hover_animation_5{
+    transition:text-shadow 0.3s ease-in-out;
+}
+
+.hover_animation_5:hover{
+    text-shadow: 0 1px 2px  #FF3939;
+}
+
+.hover_animation_6{
+    transition: letter-spacing 0.3s ease-in-out;
+}
+
+.hover_animation_6:hover{
+    letter-spacing: 0.15rem;
+}

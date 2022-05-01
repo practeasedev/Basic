@@ -1,0 +1,67 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pricingTable{
+	width: 900px;
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pricingTable__card{
+	height: 70vh;
+	width: 275px;
+	padding: 1.5rem;
+	margin: 0 1px;
+	font-weight: 700;
+	font-family: "Poppins",sans-serif;
+	letter-spacing: 0em;
+	line-height: 1.5em;
+	box-sizing: border-box;
+	background: #F9FFD2;
+}
+
+.pricingTable__card.pricingTable--optimum{
+	height: 75vh;
+	width: 295px;
+	color: #FFFFFF;
+	background: #404E4D;
+}
+
+.pricingTable__pkgType{
+	font-size: 28px;
+	text-align: center;
+	line-height: 1.5em;
+}
+
+.pricingTable__pkgPrice{
+	font-size: 32px;
+	text-align: center;
+	line-height: 1.5em;
+}
+
+.pricingTable__pkgBenifits{
+	margin-top: 2.5em;
+}
+
+.pricingTable__benifit{
+	display:  grid;
+	grid-template-columns: 1fr 9fr;
+}
+
+.check{
+	color: #34A853;
+}
+.cross{
+	color: #FF4C41;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Signup Form</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<div class="signup__card">
+		<div class="signup__heading">Signup Form</div>
+		<form class=signup__form action="#">
+			<div class="signup__field">
+				<label for="username">Username:</label><br>
+				<input class="signup__inp" type="text" id="username" name="username">
+			</div>
+			<div class="signup__field" id="email">
+				<label for="email">Email Address:</label><br>
+				<input class="signup__inp" type="email" id="email" name="email">
+			</div>
+			<div class="signup__field" id="pass">
+				<label for="pass">Password:</label><br>
+				<input class="signup__inp" type="password" id="pass" name="pass">
+			</div>
+			<div class="signup__field" id="cnfPass">
+				<label for="cnfPass">Confirm Password:</label><br>
+				<input class="signup__inp" type="password" id="cnfpass" name="cnfpass">
+			</div>
+			<button id="signup__submitBtn" type="submit">Create Account</button>
+		</form>
+		<div class="accountExists">Already have an account? <a href="#">Login</a></div>
+	</div>
+</body>
+</html>

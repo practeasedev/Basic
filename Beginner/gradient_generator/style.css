@@ -1,0 +1,65 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+}
+
+input{
+    font-family: inherit;
+}
+
+.gradient_generator__title{
+    text-align: center;
+}
+
+.gradient_generator__preview{
+    width:500px;
+    height:300px;
+    background-image: linear-gradient(135deg,black,white);
+}
+.gradient_generator__form{
+    margin-top:2rem;
+
+}
+.gradient_generator__color_inputs{
+    display: flex;
+    align-items: center;
+    column-gap:2rem;
+    justify-content: center;
+}
+
+.gradient_generator__generate_button{
+    display: block;
+    margin: 1rem auto;
+    padding:0.5rem 1rem;
+    background-color: orangered;
+    color:white;
+    font-weight: bold;
+    font-size: 1rem;
+    border:0;
+    border-radius:0.2rem;
+    cursor: pointer;
+}
+
+.gradient_generator__generate_button:hover{
+    background-color: rgb(226, 63, 3);
+}
+
+.form_field{
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+}
+
+.form_field label{
+    font-weight: bold;
+    font-size:1.2rem;
+}

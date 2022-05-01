@@ -1,0 +1,167 @@
+/* css resets */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+}
+
+.title{
+    margin-bottom:2rem;
+}
+
+/* container styling */
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width:50%;
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+/* card styling */
+.card{
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap:1rem;
+    align-items: center;
+    box-shadow: 0px 0px 2px 0px rgb(184, 183, 183);
+}
+
+/* loader1 styling*/
+.loader1{
+    width:3rem;
+    height:3rem;
+    border:0.3rem solid blue;
+    border-left: 0.3rem solid white;
+    border-radius: 50%;
+    animation:rotate 1s linear infinite;
+}
+
+/*loader2 styling*/
+.loader2{
+    width:3rem;
+    height:3rem;
+    border:0.3rem solid lightgray;
+    border-top:0.3rem solid blue;
+    border-radius:50%;
+    animation:rotate 1s linear infinite;
+}
+
+/* loader3 styling */
+.loader3{
+    width:3rem;
+    height:3rem;
+    border:0.3rem solid lightgray;
+    border-top:0.3rem solid blue;
+    border-bottom:0.3rem solid blue;
+    border-radius:50%;
+    animation:rotate 1s linear infinite;
+}
+
+/*loader4 styling */
+.loader4{
+    display: flex;
+    align-items: center;
+    column-gap:0.5rem;
+    height:3rem;
+}
+.card__loader__circle{
+    width:0.7rem;
+    height:0.7rem;
+    border:2px solid blue;
+    border-radius:50%;
+}
+
+.loader4-circle1,.loader4-circle2,.loader4-circle3{
+    animation:scale 0.5s ease-in-out infinite alternate;
+}
+
+.loader4-circle2{
+    animation-delay:0.125s ;
+}
+
+.loader4-circle3{
+    animation-delay:0.25s ;
+}
+
+/* loader5 styling */
+.loader5{
+    display: flex;
+    align-items: center;
+    column-gap:0.5rem;
+    height:3rem;
+}
+
+.loader5-circle1,.loader5-circle2,.loader5-circle3{
+    animation:updown 0.5s ease-in-out infinite alternate;
+}
+.loader5-circle2{
+    animation-delay:0.125s ;
+}
+
+.loader5-circle3{
+    animation-delay:0.25s ;
+}
+
+/* loader6 */
+.loader6{
+    display: flex;
+    align-items: center;
+    column-gap:0.5rem;
+    height:3rem;
+}
+
+.loader6-circle1,.loader6-circle2,.loader6-circle3{
+    animation:colorchange 0.5s ease-in-out infinite alternate;
+}
+.loader6-circle2{
+    animation-delay:0.5s ;
+}
+
+/* Animations */
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);   
+    }
+    100%{
+        transform:rotate(360deg)
+    }
+}
+
+@keyframes scale{
+    0%{
+        transform:scale(1);
+    }
+    100%{
+        transform:scale(1.3);
+    }
+}
+
+@keyframes updown{
+    0%{
+        transform:translateY(0);
+    }
+    100%{
+        transform:translateY(-0.5rem);
+    }
+}
+
+@keyframes colorchange{
+    0%{
+        background-color: white;
+    }
+    100%{
+        background-color: blue;
+    }
+}
+

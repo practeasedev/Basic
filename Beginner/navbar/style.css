@@ -1,0 +1,45 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
+button{
+    font-family: inherit;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1rem 2rem;
+    box-shadow: 0 2px 4px 0 #aaaaaa;
+}
+
+.navbar__nav_links_group{
+    display: flex;
+    align-items: center;
+    column-gap: 3rem;
+    list-style-type: none;
+}
+
+.nav_link{
+    text-decoration: none;
+    color:black
+}
+
+.navbar__auth_btn{
+    padding:0.5rem 0;
+    width:100px;
+    color:white;
+    background-color: tomato;
+    font-weight: bold;
+    font-size:1rem;
+    border:0;
+    border-radius:1.2rem;
+    cursor:pointer
+}
