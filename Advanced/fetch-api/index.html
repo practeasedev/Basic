@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Fetch API</title>
+
+	 <!-- linking google fonts : Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- linking style sheets -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- linking js script files -->
+	<script src="./script.js" defer></script>
+</head>
+<body>
+	<div class="app__container container--fade">
+		<header>
+			<div class="title">Random User</div>
+			<div class="filter__container">
+				<div class="filter_by">
+					<div id="filter_by__dropdown">
+						<div id="filtered_by">Get Users By</div>
+						<div class="filter_by__dropdown_caret" onclick="expandDropdown()"><img src="./images/chevron-down.svg"></div>
+					</div>
+					<div class="filter_by__dropdown_options filter_by__dropdown_options--animated">
+						<div class="filter_by__dropdown_option" onclick="setFilterBy(event)" data-options="options_for_gender">
+							Gender
+						</div>
+						<div class="filter_by__dropdown_option" onclick="setFilterBy(event)" data-options="options_for_password">
+							Password
+						</div>
+						<div class="filter_by__dropdown_option" onclick="setFilterBy(event)" data-options="options_for_country">
+							Country
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="options_list">
+						<div id="options_for_gender" class="options_for_gender display_none">
+							<div>
+								<input type="radio" name="gender" value="male" id="male" onchange="generateUsers()">
+								<label for="male">Male</label>
+							</div>
+							<div>
+								<input type="radio" name="gender" value="female" id="female" onchange="generateUsers()">
+								<label for="female">Female</label>
+							</div>
+						</div>
+
+						<div id="options_for_password" class="options_for_password display_none">
+							<div>
+								<label>Min-Length: </label>
+								<input type="number" name="min-length" id="min-length" onchange="generateUsers()">
+							</div>
+							<div>
+								<label>Max-Length: </label>
+								<input type="number" name="max-length" id="max-length" onchange="generateUsers()">
+							</div>
+						</div>
+
+						<div id="options_for_country" class="options_for_country display_none">
+							<div id="country__dropdown">
+								<div id="selected_country">Select a nationality</div>
+								<div class="dropdown__caret"><img src="./images/chevron-down.svg"></div>
+							</div>
+							<div class="country__dropdown__options country__dropdown__options--animated">
+								<div class="country__dropdown_option" data-country="AU" onclick="setNat(event)">Australia</div>
+								<div class="country__dropdown_option" data-country="BR" onclick="setNat(event)">Brazil</div>
+								<div class="country__dropdown_option" data-country="CA" onclick="setNat(event)">Canada</div>
+								<div class="country__dropdown_option" data-country="CH" onclick="setNat(event)">Switzerland</div>
+								<div class="country__dropdown_option" data-country="DE" onclick="setNat(event)">Germany</div>
+								<div class="country__dropdown_option" data-country="DK" onclick="setNat(event)">Denmark</div>
+								<div class="country__dropdown_option" data-country="ES" onclick="setNat(event)">Spain</div>
+								<div class="country__dropdown_option" data-country="FI" onclick="setNat(event)">Finland</div>
+								<div class="country__dropdown_option" data-country="FR" onclick="setNat(event)">France</div>
+								<div class="country__dropdown_option" data-country="GB" onclick="setNat(event)">United Kingdom</div>
+								<div class="country__dropdown_option" data-country="IE" onclick="setNat(event)">Ireland</div>
+								<div class="country__dropdown_option" data-country="IR" onclick="setNat(event)">Iran</div>
+								<div class="country__dropdown_option" data-country="NO" onclick="setNat(event)">Norway</div>
+								<div class="country__dropdown_option" data-country="NL" onclick="setNat(event)">Netherlands</div>
+								<div class="country__dropdown_option" data-country="NZ" onclick="setNat(event)">New Zealand</div>
+								<div class="country__dropdown_option" data-country="TR" onclick="setNat(event)">Turkey</div>
+								<div class="country__dropdown_option" data-country="US" onclick="setNat(event)">United States</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div><span id="error_message">*</span></div>
+			</div>
+		</header>
+		<ul id="search_results__container">
+			<div id="loader">
+				Generating Users<span class="loader__dots_container">
+					<div class="loader__dot loader__dot--animate"></div>
+					<div class="loader__dot loader__dot--animate"></div>
+					<div class="loader__dot loader__dot--animate"></div>
+				</span>
+			</div>
+		</ul>
+	</div>
+</body>
+</html>

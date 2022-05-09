@@ -1,0 +1,149 @@
+*{
+	padding: 0px;
+	margin:  0px;
+	box-sizing: border-box;
+}
+
+input,textarea,button{
+	font-family: inherit;
+	font-size: 1rem;
+}
+
+body{
+	font-family: Playfair Display;
+}
+
+.background{
+	background: url(https://images.unsplash.com/photo-1463797221720-6b07e6426c24?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZnVybml0dXJlJTIwc2hvcHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+	background-repeat:no-repeat;
+	background-position: center ;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.background__mask{
+	min-height: 100vh;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.3);
+	overflow: hidden;
+}
+
+.product__heading{
+	padding: 1em;
+	font-size: 3rem;
+	text-align: center;
+	font-weight: 700;
+}
+
+.product__tagline{
+	margin: auto;
+	width: 700px;
+	text-align: center;
+	font-weight: 700;
+	font-size: 4em;
+}
+
+.underline{
+	text-decoration: underline solid #420000;
+}
+
+.product__shop_now_btn{
+	width: 300px;
+	padding: 0.4em;
+	font-size: 1.5em;
+	background: #420000;
+	color: white;
+	margin: 1.5em auto;
+	display: block;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.hamburger{
+	position: absolute;
+	top: 4em;
+	left: 3em;
+	font-weight: 700;
+	width: 35px;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+}
+
+.hamburger-translate{
+	left: 23em;
+}
+
+.hamburger__bar{
+	border-bottom: 5px solid black;
+	margin: 2px;
+	display: block;
+	transition: all 0.5s ease-in-out;
+	z-index: 15;
+}
+
+.bar1{
+	transform: translate(0px,7px) rotate(45deg);
+}
+
+.bar2{
+	transform:  translate(0px,0px);
+	opacity: 0;
+}
+
+.bar3{
+	transform:translate(0px,-7px) rotate(-45deg);
+}
+
+.hamburger__menu{
+	height: 100vh;
+	width: 450px;
+	background: #FFF;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 9em 0 0;
+	text-align: center;
+	transform: translate(-500px,0);
+	transition: all 0.4s ease-in-out;
+	color: #420000;
+}
+
+.hamburger__menu-translate{
+	transform: translate(0,0);
+}
+
+.hamburger__menu_option{
+	display: block;
+	/*color: black;*/
+	padding: 0.2em;
+	font-size: 2em;
+	font-weight: 700;
+	cursor: pointer;
+	width: 150px;
+	margin: 0.3em auto;
+}
+
+.hamburger__menu_option:hover{
+	text-decoration: underline solid black;
+}
+
+.hamburger__social_media_links{
+	display: flex;
+	width: 250px;
+	margin: 2em auto;
+	justify-content: space-around;
+}
+
+.social_media_icon{
+	height: 70px;
+	width: 70px;
+	margin: 2px;
+	background: black;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.social_media_icon:hover{
+	box-shadow: 0 0 5px 0px #AA4A39;
+}

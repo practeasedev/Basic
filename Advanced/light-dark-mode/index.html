@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>Light/Dark Mode</title>
+</head>
+<body class="siteContainer transition">
+    <header class="header">
+        <p class="header__logo">Developer's Blog</p>
+        <div class="modeToggler toggler transition">
+            <div class="modeToggler__circle transition">
+                <img src="./images/sun.svg" class="modeToggler__image" alt="Current Mode Image">
+            </div>
+        </div>
+    </header>
+    <div class="blogContainer">
+        <main class="blogContainer__main">
+            <section class="trending">
+                <h2 class="title">Trending</h2>
+                <div class="trending__articles articles">
+                    <article class="article">
+                        <h3 class="article__title">How to create a loader using css?</h3>
+                        <p class="article__firstParagraph">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <button class="button button--light">Read More</button>
+                    </article>
+                    <article class="article">
+                        <h3 class="article__title">How to create a loader using css?</h3>
+                        <p class="article__firstParagraph">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <button class="button button--light">Read More</button>
+                    </article> 
+                </div>
+            </section>
+            <section class="latest">
+                <h2 class="title">Latest</h2>
+                <div class="latest__articles articles">
+                    <article class="article">
+                        <h3 class="article__title">How to create a loader using css?</h3>
+                        <p class="article__firstParagraph">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <button class="button button--light">Read More</button>
+                    </article>
+                    <article class="article">
+                        <h3 class="article__title">How to create a loader using css?</h3>
+                        <p class="article__firstParagraph">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <button class="button button--light">Read More</button>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <aside class="blogContainer__aside">
+            <div class="advertisement">
+                <h3 class="advertisement__title">Want to write for us?</h3>
+                <div class="content content--type1">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+                </div>
+                <p class="advertisement__closeBtn">&times;</p>
+            </div>
+            <div class="advertisement">
+                <div class="content content--type2 ">
+                    <img src="./images/adv-img-light.svg" class="content__image" alt="Advertisement Image">
+                    <div class="content__text">
+                        <h4 class="content__subtitle">Learn Web Development </h4>
+                        <h3 class="advertisement__title">From Zero to Hero in 90 days</h3>
+                    </div>
+                </div>
+                <button class="button button--light">Visit Link</button>
+                <p class="advertisement__closeBtn">&times;</p>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

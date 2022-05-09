@@ -1,0 +1,78 @@
+/* css resets */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* body styling start */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* body stylign end */
+
+/* calculator styling start*/
+.calculator {
+  min-width: 500px;
+  padding: 2.5rem;
+  background: #525252;
+  border-radius: 10px;
+}
+
+#calculator__display {
+  width: 100%;
+  height: 2.25em;
+  padding: 0.5em 0.25ex;
+  background: #edffe2;
+  border-radius: 5px;
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.75em;
+}
+
+.calculator__btns {
+  width: 100%;
+  margin: 1em 0 0 0;
+  border-collapse: separate;
+  border-spacing: 0px 15px;
+}
+
+.calculator__btns td {
+  width: 22%;
+}
+
+.calculator__btn {
+  font-size: 1.75em;
+  font-weight: 700;
+  width: 70px;
+  height: 1.75em;
+  border: none;
+  box-shadow: 0px 2px 4px #000000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calculator__btn:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+.lastCol {
+  background: #ff3333;
+  color: white;
+}
+
+#clear {
+  min-height: 177px;
+}
+/* calculator styling end */

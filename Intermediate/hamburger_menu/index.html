@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hamburger Menu</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<div class="background">
+		<div class="background__mask">
+			<div id="hamburger_menu" class="hamburger__menu">
+				<div class="hamburger__menu_option">Home</div>
+				<div class="hamburger__menu_option">About</div>
+				<div class="hamburger__menu_option">Shop</div>
+				<div class="hamburger__menu_option">Contact</div>
+				<div class="hamburger__social_media_links">
+					<div class="social_media_icon"></div>
+					<div class="social_media_icon"></div>
+					<div class="social_media_icon"></div>
+				</div>
+			</div>
+			<div id="hamburger" onclick="openMenu()" class="hamburger">
+				<span id="bar1" class="hamburger__bar"></span>
+				<span id="bar2" class="hamburger__bar"></span>
+				<span id="bar3" class="hamburger__bar"></span>
+			</div>
+			<h2 class="product__heading">Oak & Chisel</h2>
+			<div class="product__tagline">
+				One stop solution to <span class="underline">Quality</span> furniture at <span class="underline">Affordable</span> price.
+			</div>
+			<button class="product__shop_now_btn">Shop Now!</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let hamburgerMenu = document.getElementById("hamburger_menu");
+		let hamburger = document.getElementById("hamburger");
+		let bar1 = document.getElementById("bar1");
+		let bar2 = document.getElementById("bar2");
+		let bar3 = document.getElementById("bar3");
+
+		const openMenu = () =>{
+			hamburgerMenu.classList.toggle("hamburger__menu-translate")
+			hamburger.classList.toggle("hamburger-translate")
+			bar1.classList.toggle("bar1")
+			bar2.classList.toggle("bar2")
+			bar3.classList.toggle("bar3")
+		}
+	</script>
+</body>
+</html>

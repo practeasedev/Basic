@@ -1,0 +1,67 @@
+<!-- Carousel (INTERMEDIATE PROJECT) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking google fonts : Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- linking style sheets -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- linking js script files -->
+    <script src="./script.js" defer></script>
+    <title>Carousel</title>
+</head>
+<body>
+    <div class="container">
+        <div class="website__fixed_elements">
+            <header>
+                <h4 class="website__logo">Juice House</h2>
+                <nav>
+                    <ul>
+                        <li class="website__nav_link">Home</li>
+                        <li class="website__nav_link">About</li>
+                        <li class="website__nav_link">Shop</li>
+                        <li class="website__nav_link auth_button">Login</li>
+                        <li class="website__nav_link auth_button">SignUp</li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="website__content">
+                <div class="website__tagline">
+                    <h1>JuiceHouse</h1>
+                    <p>A one stop shop for your juice cravings</p>
+                </div>
+                <button class="website__order_button">Order Now</button>
+            </div>
+        </div>
+
+        <div class="carousel">
+            <div class="carousel__container">
+                <div class="carousel__image">
+                    <img src="./images/image1.jpg" alt="strawberry juice">
+                </div>
+                <div class="carousel__image">
+                    <img src="./images/image2.jpg" alt="strawberry juice">
+                </div>
+                <div class="carousel__image">
+                    <img src="./images/image3.jpg" alt="strawberry juice">
+                </div>
+            </div>
+            <div class="carousel__controls">
+                <img src="./images/chevron-left.svg" alt="chevron left" class="carousel__chevron_left">
+                <img src="./images/chevron-right.svg" alt="chevron right" class="carousel__chevron_right">
+            </div>
+            <div class="carousel__indicators">
+                <span class="carousel__indicator"></span>
+                <span class="carousel__indicator"></span>
+                <span class="carousel__indicator"></span>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

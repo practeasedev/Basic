@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Documentation Page</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<div class="documentation__side_bar">
+		<div class="side_bar_heading"><a href="#content__heading">Cross Site Scripting (XSS)</a></div>
+		<ul class="side_bar__list_of_contents">
+			<li class="level1"><a href="#content__section_abstract">Abstract</a></li>
+			<li class="level1"><a href="#content__section1">1. Introduction</a></li>
+			<li class="level1"><a href="#content__section2">2. Cross Site Scripting</a></li>
+			<li class="level2"><a href="#content__section2.1">2.1 What is XSS?</a></li>
+			<li class="level2"><a href="#content__section2.2">2.2 Taxonomy of XSS</a></li>
+			<li class="level3"><a href="#content__section2.2.1">2.2.1 Stored XSS</a></li>
+			<li class="level3"><a href="#content__section2.2.2">2.2.2 Reflected XSS</a></li>
+			<li class="level3"><a href="#content__section2.2.3">2.2.3 DOM Based XSS</a></li>
+			<li class="level2"><a href="#content__section2.3">2.3 Basic Mitigation Techniques</a></li>
+			<li class="level1"><a href="#content__section3">3. Proposed Methodology</a></li>
+			<li class="level1"><a href="#content__section4">4. Conclusion</a></li>
+		</ul>
+	</div>
+	<div class="documentation__content">
+		<h1 id="content__heading">Cross Site Scripting</h1>
+		<section>
+			<h2 id="content__section_abstract">Abstract</h2>
+			<div>
+				<p>Nowadays, due to the increased use of the internet and digitalization of many services, 
+				the deployment and the use of web applications have increased. Since these web 
+				applications are being used in almost all the domains, they have become a favorite 
+				target to various attacks. In this paper we highlight one of the top most attacks in 
+				modern web i.e Cross Site Scripting attack(XSS), which is also listed in the top 10 
+				web vulnerabilities by OWASP and propose a model to mitigate XSS attacks [2]. XSS 
+				is a code injection attack that allows an attacker to run malicious javascript code on 
+				the victim's browser and as a result steal victim’s cookies, passwords, locations, credit 
+				card numbers etc. We also discuss and analyse some of the recent work in this domain. 
+				Based on the strengths and loopholes of the discussed mechanisms, we propose a 
+				client side XSS detection model which is capable of handling some of the edge cases 
+				in the previous models.</p>
+
+				<p><b>Keywords:</b> Cross Site Scripting(XSS), OWASP, Code injection attack, Malicious 
+				javascript code.</p>
+			</div>
+		</section>
+		<section>
+			<h2 id="content__section1">1. Introduction</h2>
+			<div>
+				<p>In the modern society, with the monumental advancements in web technologies and 
+					innovations like the internet of things, web applications have become a part and parcel 
+					of the daily routines of people. As of January 2021 there were about 4.66 billion 
+					active internet users I.e about 59.5% of the global population. Users avail different 
+					services and connect with people over the internet. The data shared by the users not 
+					only benefits different organizations for analyzing the data and improving the 
+					customer experience but also fascinates the attackers to use the data for his/her selfish 
+					motives.</p>
+				<p>This paper addresses one such attack called Cross site scripting attack(XSS). 
+					According to the Acunetix Web Application Vulnerability Report 2021,in 2020, 25% 
+					of the web targets still had XSS vulnerabilities and this number is gradually increasing [1]. Cross site scripting comes within the sphere of code injection vulnerabilities. In this type of attack, an adversary injects a malicious javascript code through the input parameters on the client side. This code gets executed on the victim’s browser and performs harmful actions like cookie stealing, session token 
+					theft and can also be used to launch other attacks. The XSS attack occurs because the 
+					web developer oversees the need to place restrictions on the input character-set and 
+					poor data validation, which then poses a serious security threat to the website and 
+					clients in the future. These days HTML 5 has gained popularity for the purpose of 
+					front-end development. The main objective of HTML 5 was to support multimedia 
+					and improve the user experience.HTML5 contains many new features such as SVG, 
+					Canvas, web storage, drag and drop,Geo-location, Communication API’s, new 
+					attributes for tags and so on.</p>
+				<p>Though HTML 5 takes advantage of new features in improving the user experience, it 
+					simultaneously introduces new potential threats to users and websites. The existing 
+					solutions to XSS detection make use of regular expression to detect the presence of 
+					dynamic content and client side filtering mechanism[5]. The use of new technologies 
+					like HTML 5 makes detecting XSS patterns harder and harder. Multitudinous defence 
+					mechanisms are being put forward to mitigate this attack but the drawback of these 
+					solutions is low fidelity and disallowing the execution of begin code. In this paper we 
+					discuss an approach that uses a repository of blacklisted keywords instead of the 
+					traditional regular expression matching</p>
+			</div>
+		</section>
+		<section>
+			<h2 id="content__section2">2. Cross Site Scripting(XSS)</h2>
+			<div>
+				<h3 id="content__section2.1">2.1 What is XSS?</h3>
+				<div>
+					<p>Cross site scripting, abbreviated as XSS is a type of code injection attack in which an 
+						attacker somehow injects judicially crafted javascript into a vulnerable web 
+						applications. This evil script gets executed on the victim’s browser and the sensitive 
+						data such as cookies, password, session tokens etc gets leaked to the attacker. XSS 
+						attacks can be launched in 3 forms: they are stored XSS attacks, reflected XSS attacks 
+						and DOM based XSS attacks.</p>
+				</div>
+				<h3 id="content__section2.2">2.2 Taxonomy of Cross Site Scripting</h3>
+				<div>
+					<h4 id="content__section2.2.1">2.2.1 Stored XSS:</h4>
+					<div>
+						<p>In this type of XSS attack the injected malicious script is sent back to the server of the 
+							web application using an attack vector and is stored in the database.Whenever the 
+							page that loads this stored malicious script is visited by a user the malicious script can 
+							steal the passwords,cookies etc. of that user.This attack is also known as "Persistent 
+							XSS" as the malicious script is stored in the database and attacks the user until it is 
+							removed</p>
+						<p>For example consider the scenario of commenting in an e-commerce website, if the 
+							comment entered by the user is not sanitized or checked for malicious code as shown 
+							in the fig.1 before sending to the server, this leads to stored XSS attack.Every time a 
+							user visits the product page where the comment that contains the malicious script is 
+							loaded,it affects the user in the form of stealing cookies,passwords etc</p>
+					</div>
+					<h4 id="content__section2.2.2">2.2.2 Reflected XSS:</h4>
+					<div>
+						<p>In this type of XSS attack the attacker manipulates the user to click a meticulously 
+							crafted malicious link which affects the users browser by stealing cookies,session 
+							tokens,passwords etc.The fig.2 explains the process of executing this attack.First the 
+							attacker checks if the given website is vulnerable to XSS,if it is then the attacker uses 
+							social engineering to manipulate the user to click the malicious link.Social 
+							engineering means tricking the user by manipulating user to achieve a successful 
+							conclusion of the attack [21].An example of Social engineering might be "Phishing 
+							attack".</p>
+						<p>Once the user clicks the link a request is sent to the website server which then reflects 
+							back to the browser the malicious code of the attacker in the link.The browser 
+							executes this malicious code on the users browser which transmits confidential user 
+							information such as cookies,session tokens,passwords etc.to the attacker.</p>
+					</div>
+					<h4 id="content__section2.2.3">2.2.3 DOM based XSS:</h4>
+					<div>
+						<p>In this type of XSS the attackers malicious code is executed by changing the DOM of 
+							the website on the client side.This code occurs as DOM rather than HTML format, eg: 
+							document.URL, document.write etc.</p>
+					</div>
+				</div>
+				<h3 id="content__section2.3">2.3 Basic techniques to mitigate XSS attacks</h3>
+				<div>
+					<b>1. Be specific about the inputs taken from the user:</b><br>
+					<p>Filter the input based on what type of data you are looking for and what is valid.For 
+						example - using the type attribute in the input tag is one such method to restrict the 
+						user to get the type of data you want.</p>
+					<b>2.Encoding untrusted data:</b><br>
+					<p>Encoding untrusted data before injecting them into the allowed places in the code is 
+						another way of mitigating XSS.For example, the characters such as <,>,(,) etc. can be 
+						replaced with their HTML entities before injecting the html content so that the code 
+						becomes inactive.</p>
+					<b>3.Using Content security policy</b><br>
+					<p>You can use Content security policy (CSP) to mitigate XSS.The CSP only allows 
+						scripts from the trusted domains which the developer specifies in the content-security 
+						policy header, hence preventing any untrusted javascript from executing</p>
+					<b>4.Using appropriate response headers:</b><br>
+					<p>You can use headers such as content-type to prevent HTTP response that are not 
+						considered to contain scripts.For example if the response should contain JSON then 
+						we can set the content-type header as 'application/json'.</p>
+					<b>5.Using trusted libraries:</b><br>
+					<p>Using trusted libraries and updating them regularly can also decrease the 
+						commencet of an XSS attack.</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h2 id="content__section3">Proposed Methodology</h3>
+			<div>
+				<p>In this section we present our model for mitigating Cross site scripting attacks.The model consists 		of the following major modules namely Input classifier,character encoder, javascript preprocessor 		and vulnerability tester.</p>
+				<p>Initially the model collects the user inputs from all the form inputs in a web 
+					application. The collected inputs are categorized into code input or plain form input 
+					by the input classifier (This is specified by the web application developer). Plain form 
+					inputs are not supposed to contain any code elements like <,>,”,& etc. Hence all the 
+					special characters in the inputs that are classified as plain form inputs are simply 
+					encoded into HEX codes by the character encoder. Once encoded these inputs are safe 
+					and cannot launch any attacks.</p>
+				<p>In case of inputs that accept code,it is tested for any malicious code by the 
+					vulnerability tester.If it contains any harmful code, it prompts the user to re-enter the 
+					input else forwards the request to the server.The working of the vulnerability tester is 
+					as follows: Firstly all the encoded code is decode using a pre-processor, since 
+					attackers these days write the attack vectors in encoded format so that they go 
+					undetected by many XSS detection systems.Then the pre-processed inputs are 
+					inspected word by word to check if they consist any potentially harmful keywords. 
+					All the words in the input are compared against a XSS keyword repository. This XSS 
+					keyword repository has the keywords such as onerror, onfocus, onclick etc which can 
+					trigger the execution of javascript code. If any of the input has these keywords, the 
+					input is rejected and treated invalid. Since the vulnerability tester detects any harmful 
+					keywords, even if javascript code is injected into the input, it won’t be executed. Most 
+					of the existing methods use pattern matching strategy that match the inputs against a 
+					XSS repository with all the possible attack vector patterns and detect any XSS attack 
+					vectors. But our method makes use of keyword matching, hence it has a greater chance of detecting a new attack vector, whose pattern is not yet registered in the 
+					XSS repository. The following figure shows the flow of our model</p>
+			</div>
+		</section>
+		<section>
+			<h2 id="content__section4">5. Conclusion</h3>
+			<div>
+				<p>In this paper, we discussed the term XSS attack and its types. We also took a look at 
+					some of the proposed methodologies to detect and mitigate XSS attacks. From our 
+					literature survey we understand many of the existing models use pattern matching to 
+					detect XSS attack vectors. But the emergence of new technologies and adding of new 
+					features, also result in new attack vectors, which can easily bypass many of the 
+					existing models. The attackers these days, encode the input vectors which can go 
+					undetected by any model which searches for patterns or any machine learning models 
+					which were trained using decoded keywords. Therefore we propose a simple and 
+					improvised XSS attack detection model which firstly pre-processes the inputs and 
+					decodes any encoded content and then detects XSS inputs based on the keywords 
+					instead of attack vector patterns. There are also black box models proposed for 
+					detecting XSS vulnerabilities.But using these methods is not very effective as new 
+					attack vectors are being discovered regularly and also might be overkill for small 
+					applications.</p>
+				<p>Looking at the related work we can also infer that most of the recent XSS detection 
+					models use machine learning algorithms. Though machine learning algorithms can be 
+					very effective in detecting XSS, most of the machine learning algorithms have 
+					disadvantages such as high complexity, high training period, overfitting etc. Hence it 
+					is better to use simple models for small applications which run on low configuration 
+					devices. Having said that considering the advances in machine learning, the models 
+					using ML algorithms have a promising future. Our model is an attempt to overcome 
+					some edge cases. It can be further improved using better algorithms such as KMP forstring matching. The malicious keyword detection can be implemented using machine 
+					learning for even better results.</p>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

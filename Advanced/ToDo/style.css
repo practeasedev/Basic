@@ -1,0 +1,143 @@
+/* css resets */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button,input {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* body styling start */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.container{
+  padding: 1em;
+  width: 650px;
+}
+
+.app_heading{
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.todo__add{
+  margin: 1em;
+  width: auto;
+  display: flex;
+}
+.todo__add_input_box{
+  flex-grow: 8;
+}
+
+.todo__add_button{
+  flex-grow: 1;
+  text-align: right;
+}
+.todo__add_input_box input,.todo__add_button button {
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.5rem;
+  border-radius: 5px;
+}
+
+.todo__add_input_box input{
+  width: 100%;
+  background: #F4F2F2;
+}
+.todo__add_button button{
+  width: 90%;
+  font-weight: 600;
+  cursor: pointer;
+  background: #0085FF;
+  color: white;
+} 
+
+.todo__list_container{
+  margin: 1em;
+  width: auto;
+  height: 20em;
+}
+
+#todo__list_empty_message{
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 500;
+  display: none;
+}
+
+.todo__list_item{
+  display: flex;
+  border-radius: 5px;
+  font-size: 1rem;
+  /*height: 2em;*/
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  list-style: none;
+  margin: 3px 0;
+  justify-content: space-between;
+  padding:  0.5rem;
+}
+
+.todo__list_content{
+  display: flex;
+  column-gap: 0.25rem;
+  align-items: flex-start;
+  max-width: 90%;
+}
+
+.todo__list_content input{
+  height: 1.5rem;
+}
+
+.todo__list_actions{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.task{
+  cursor: pointer;
+}
+.todo_list__actions{
+  display: flex;
+}
+.todo_list__actions div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.2rem;
+  cursor: pointer;
+}
+
+.edit_button{
+  color:  white;
+  background: #03E3BB;
+}
+
+.delete_button{
+  background: #FF5252;
+}
+
+.strike_through{
+  text-decoration: line-through;
+}
+
+.hide{
+  visibility: hidden;
+}
+
+.disable{
+  pointer-events: none;
+  filter: blur(1px);
+  /*filter: grayscale(100%);*/
+  opacity: 0.6;
+}

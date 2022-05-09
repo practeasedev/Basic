@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Modal</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<div class="heading">Seven Wonders Of The World...</div>
+	<div class="flexbox__container">
+		<div onclick="openModal('Great wall of China')" class="modal__card">
+			<img class="card__image" src="http://www.wermac.org/civil_eng/civil_eng_pics/great_wall_china.jpg">
+			<div class="card__head">Great wall of China</div>
+		</div>
+		<div onclick="openModal('Chichen Itza')" class="modal__card">
+			<img class="card__image" src="https://media.istockphoto.com/photos/el-castillo-of-chichen-itza-at-sunset-mexico-picture-id481272289?k=20&m=481272289&s=612x612&w=0&h=1Xk_-4Ae3HXfH75n7rsAnKwAFX_OYTgCSX-eeuyueQo=">
+			<div class="card__head">Chichen Itza</div>
+		</div>
+		<div onclick="openModal('Petra')" class="modal__card">
+			<img class="card__image" src="https://res.cloudinary.com/sagacity/image/upload/c_crop,h_4000,w_6000,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1080/shutterstock_1030695895_lfjbb2.jpg">
+			<div class="card__head">Petra</div>
+		</div>
+		<div onclick="openModal('Machu Picchu')" class="modal__card">
+			<img class="card__image" src="https://scitechdaily.com/images/Machu-Picchu-Peru-777x518.jpg">
+			<div class="card__head">Machu Picchu</div>
+		</div>
+		<div onclick="openModal('Christ the Redeemer')" class="modal__card">
+			<img class="card__image" src="https://www.worldatlas.com/r/w960-q80/upload/f3/5c/f9/shutterstock-194620976.jpg">
+			<div class="card__head">Christ the Redeemer</div>
+		</div>
+		<div onclick="openModal('Colosseum')" class="modal__card">
+			<img class="card__image" src="https://render.fineartamerica.com/images/rendered/default/greeting-card/images/artworkimages/medium/1/colloseum-ajay-thakur.jpg?&targetx=-25&targety=0&imagewidth=750&imageheight=500&modelwidth=700&modelheight=500&backgroundcolor=582E0E&orientation=0">
+			<div class="card__head">Colosseum</div>
+		</div>
+		<div onclick="openModal('Taj Mahal')" class="modal__card">
+			<img class="card__image" src="https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/2/the-taj-mahal-is-an-ivory-white-marble-yury-taranik.jpg">
+			<div class="card__head">Taj Mahal</div>
+		</div>
+	</div>
+	<div id="modal__container">
+		<div class="modal__content">
+			<div class="modal__close_mark" onclick="closeModal()">&times;</div>
+			<img id="modal__img" src="">
+			<div id="modal__article">
+				<div id="modal__article_head"></div>
+				<div id="modal__article_content"></div><br>
+				<div id="modal__article_know_more">To know more visit -> <a id="know_more_link" href="" target="_blank"></a></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="./modalData.js"></script>
+	<script type="text/javascript">
+		// let wondersData;
+		// const getJsonData = () => {
+		// 	const xhttpReq = new XMLHttpRequest();
+		// 	xhttpReq.open('GET','modalData.json',true);
+		// 	xhttpReq.onreadystatechange = function () {
+		// 		if (xhttpReq.readyState == 4 && xhttpReq.status == "200"){
+		// 			wondersData = JSON.parse(this.response);
+					
+		// 		}
+		// 	}
+		// 	xhttpReq.send()
+		// }
+		const modal = document.getElementById("modal__container");
+		const modalImage = document.getElementById("modal__img");
+		const modalArticleHeading = document.getElementById("modal__article_head");
+		const modalArticleContent = document.getElementById("modal__article_content"); 
+		const modalKnowMore = document.getElementById("know_more_link");
+		const closeModal = () =>{
+			modal.style.display = "none";
+		}
+
+		const openModal = (wonder) =>{
+			let wonderDetails = wondersData.find(w=>w.wonderName===wonder);
+			console.log(wonderDetails)
+			modalArticleHeading.innerHTML = wonderDetails.wonderName;
+			modalImage.src = wonderDetails.imgSrc;
+			modalArticleContent.innerHTML = wonderDetails.about;
+			modalKnowMore.href = wonderDetails.knowMoreLink;
+			modalKnowMore.innerHTML = wonderDetails.wonderName;
+			modal.style.display = "flex";
+		}
+		// getJsonData();
+	</script>
+</body>
+</html>

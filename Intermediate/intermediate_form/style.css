@@ -1,0 +1,107 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+textarea,input,button{
+	font-family: inherit;
+	font-size: 16px;
+}
+
+textarea{
+	resize: none;
+	min-height: 25px;
+}
+
+body{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Poppins",sans-serif;
+}
+
+.contact_form__card{
+	width: 550px;
+	height: 550px;
+	padding: 1.5em;
+}
+
+.contact_form__heading{
+	font-size: 2.5em;
+	text-align: center;
+	font-weight: 700;
+}
+
+.contact_form__inp_field{
+	width: 100%;
+	padding: 1em 1em 0 1em;
+	margin: 0.2em;
+	position: relative;
+}
+
+.contact_form__inp_field input,.contact_form__inp_field textarea{
+	width: 100%;
+	padding: 0.2em 0.4em;
+	border: none;
+	border-bottom: 2px solid #00A3FF;
+	background: #EFEDED;
+	font-weight: 400;
+	font-size: 1em;
+	outline: none;
+}
+
+.contact_form__inp_field label{
+	position: absolute;
+	top: 1.2rem;
+	left: 1.2rem;
+	font-weight: 600;
+	font-size: 1rem;
+	color: #565656;
+	transition: all 0.3s ease-in-out;
+}
+
+.contact_form__inp_field input:focus + label,
+.contact_form__inp_field input:valid + label,
+.contact_form__inp_field textarea:focus + label,
+.contact_form__inp_field textarea:valid + label{
+	top: 0;
+	left: 1rem;
+	font-size: 0.8em;
+}
+
+.contact_form__inp_field button{
+	border: none;
+	font-size: 1.2em;
+	padding: 0.5rem;
+	background: #00A3FF;
+	color: white;
+	font-weight: 600;
+	margin-right: 1ex;
+	cursor: pointer;
+}
+
+#contact_form__success_message{
+	font-size: 1em;
+	color: #62CB62;
+	padding: 0.5rem 0;
+	display: none;
+}
+
+.button_message{
+	display: flex;
+}
+
+#name_required__warning,
+#email_required__warning{
+	font-size: 0.8rem;
+	color: #FE6262;
+	visibility: hidden;
+}
+
+#email_invalid__warning{
+	font-size: 0.8rem;
+	color: #FE6262;
+	display: none;
+}

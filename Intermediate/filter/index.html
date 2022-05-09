@@ -1,0 +1,49 @@
+<!-- FILTER (INTERMEDIATE PROJECT) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking google fonts : Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- linking style sheeets -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- linking js script files -->
+    <!-- Uncomment this section if you want to try  using live server
+        <script type="module" src="./script.js" defer></script>
+        <script type="module" src="./data.json" defer></script>
+    -->
+    <script type="text/javascript" src="./data.js" defer></script>
+    <script type="text/javascript" src="./script.js" defer></script>
+    <title>Filter</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="filter_section">
+            <p class="search-for">Filter Results For : <span class="filter__search_string">search for something</span></p>
+            <div class="filter__search_bar">
+                <img src="./images/search.svg" id="search_bar__search_icon" height="24px">
+                <input type="text" onkeyup="search()" id="search_bar__input" placeholder="Enter country name">
+            </div>
+        </div>
+        <table class="countryData_table">
+            <thead class="countryData_table__head">
+                <tr>
+                    <th>Country</th>
+                    <th>Capital</th>
+                    <th>Currency</th>
+                    <th>Languages</th>
+                </tr>
+            </thead>
+            <tbody class="countryData_table__body"></tbody>
+        </table>
+        <p class="empty-msg">No countries found :(</p>
+    </div>
+</body>
+
+</html>

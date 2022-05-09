@@ -1,0 +1,155 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Fredoka One',sans-serif;
+}
+
+button{
+    font-family: inherit;
+    font-size: 1rem;
+    position: relative;
+}
+
+.container{
+    height:100vh;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.website__fixed_elements{
+    width:100%;
+    margin:auto;
+    display: grid;
+    grid-template-rows: 10% auto;
+    height:100%;
+    position:absolute;
+    z-index: 10;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.3);
+}
+
+.website__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.website__tagline h1{
+    font-size:6rem;
+}
+
+.website__tagline p{
+    font-size: 1.5rem;
+}
+
+.website__order_button{
+    font-size: 2rem;
+    padding:1rem 5rem;
+    border:0;
+    border-radius: 2rem;
+    background-color: #FF5757;
+    color: white;
+    margin-top:2rem;
+    cursor: pointer;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color:white;
+    padding:0 5rem;
+}
+
+.logo{
+    font-size:1.5rem;
+}
+
+.auth_button{
+    color:#FF5757;
+    text-decoration: underline;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.website__nav_link{
+    cursor: pointer;
+}
+
+.website__nav_link:not(:last-child){
+    margin-right:3rem ;
+}
+.carousel{
+    overflow: hidden;
+    width:100vw
+}
+
+.carousel__container{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel__image{
+    width:100%;
+    height:100vh;
+}
+
+.carousel__image img {
+    height:100vh;
+    width:100vw;
+    object-fit:cover;
+}
+
+.carousel__controls img{
+    height:5rem;
+    width:auto;
+    position: absolute;
+    z-index: 20;
+    cursor: pointer;
+    top:50%;
+    transform:  translateY(-50%);
+}
+
+.carousel__chevron_left{
+    left:0; 
+}
+.carousel__chevron_right{
+    right:0; 
+}
+
+.carousel__indicators{
+    position: absolute;
+    z-index: 20;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:1rem;
+    width:100%;
+    text-align: center;
+}
+
+.carousel__indicator:first-child{
+    background-color:white;
+}
+.carousel__indicator{
+    padding:0.1rem 0.7rem;
+    border-radius: 50%;
+    border:2px solid white;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out ;
+}
+
+.carousel__indicator:not(:last-child){
+    margin-right:1rem;
+}

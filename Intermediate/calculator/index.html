@@ -1,0 +1,49 @@
+<!-- CALCULATOR (INTERMEDIATE PROJECT) -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculator</title>
+	<!--linking google fonts : Poppins -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+	<!-- linking style sheets -->
+	<link rel="stylesheet" type="text/css" href="./style.css">	
+	<!-- linking js script files -->
+	<script src="./script.js" defer></script>
+</head>
+<body>
+	<div class="calculator">
+		<div id="calculator__display"></div>
+		<table class="calculator__btns">
+			<tr>
+				<td><button onclick="updateDisplay('7')" class="calculator__btn">7</button></td>
+				<td><button onclick="updateDisplay('8')" class="calculator__btn">8</button></td>
+				<td><button onclick="updateDisplay('9')" class="calculator__btn">9</button></td>
+				<td><button onclick="updateDisplay('/')" class="calculator__btn">/</button></td>
+				<td><button onclick="clearPrev()" class="lastCol calculator__btn">C</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="updateDisplay('4')" class="calculator__btn">4</button></td>
+				<td><button onclick="updateDisplay('5')" class="calculator__btn">5</button></td>
+				<td><button onclick="updateDisplay('6')" class="calculator__btn">6</button></td>
+				<td><button onclick="updateDisplay('*')" class="calculator__btn">X</button></td>
+				<td rowspan="3"><button onclick="clearAll()" id="clear" class="lastCol calculator__btn">AC</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="updateDisplay('1')" class="calculator__btn">1</button></td>
+				<td><button onclick="updateDisplay('2')" class="calculator__btn">2</button></td>
+				<td><button onclick="updateDisplay('3')" class="calculator__btn">3</button></td>
+				<td><button onclick="updateDisplay('-')" class="calculator__btn">-</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="updateDisplay('.')" class="calculator__btn">.</button></td>
+				<td><button onclick="updateDisplay('0')" class="calculator__btn">0</button></td>
+				<td><button onclick="evaluateExpression()" class="calculator__btn">=</button></td>
+				<td><button onclick="updateDisplay('+')" class="calculator__btn">+</button></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

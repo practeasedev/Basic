@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Contact Us</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<div class="contact_form__card">
+		<h2 class="contact_form__heading">Contact Us</h2>
+		<div>
+			<div class="contact_form__inp_field">
+				<input type="input" name="name" id="contact_form__name" onchange="inputChange('name')" required>
+				<label for="name">Name</label>
+				<div id="name_required__warning">*Name is a required field</div>
+			</div>
+			<div class="contact_form__inp_field">
+				<input type="name" name="email" id="contact_form__email" onchange="inputChange('email')" required>
+				<label for="email">E-Mail</label>
+				<div id="email_required__warning">*Email is a required field</div>
+				<div id="email_invalid__warning">*Invalid e-mail ID</div>
+			</div>
+			<div class="contact_form__inp_field">
+				<textarea rows=5 id="contact_form__message" required></textarea>
+				<label for="message">Message</label>
+
+			</div>
+			<div class="contact_form__inp_field button_message">
+				<button onclick="submit()">Send Message</button>
+				<div id="contact_form__success_message">&check; Message sent successfully!</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		let nameField = document.getElementById("contact_form__name");
+		let emailField = document.getElementById("contact_form__email");
+		let messageField = document.getElementById("contact_form__message");
+		let nameRequiredWarning = document.getElementById("name_required__warning");
+		let emailRequiredWarning = document.getElementById("email_required__warning");
+		let emailInvalidWarning = document.getElementById("email_invalid__warning");
+		let successMessage = document.getElementById("contact_form__success_message");
+
+		let validEmailRegeX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+		const inputChange = (inputType) =>{
+			switch(inputType){
+				case 'name':
+					nameField.style.borderBottom = "1px solid #00A3FF";
+					nameRequiredWarning.style.visibility = "hidden";
+					break;
+				case 'email':
+					emailField.style.borderBottom = "2px solid #00A3FF";
+					emailRequiredWarning.style.display = "block";
+					emailRequiredWarning.style.visibility = "hidden";
+					emailInvalidWarning.style.display = "none";
+					break;
+			}
+		}
+
+		const clearInputs = () => {
+			nameField.value = "";
+			emailField.value = "";
+			messageField.value = "";
+		}
+
+		const submit = () =>{
+			let validEmail = validEmailRegeX.test(emailField.value)
+			if(!nameField.value){
+				nameField.style.borderBottom = "2px solid #FE6262";
+				nameRequiredWarning.style.visibility = "visible";
+			}
+			if(!emailField.value){
+				emailField.style.borderBottom = "2px solid #FE6262";
+				emailRequiredWarning.style.display = "block";
+				emailRequiredWarning.style.visibility = "visible";
+			}
+			else if(!validEmail){
+				emailField.style.borderBottom = "2px solid #FE6262";
+				emailRequiredWarning.style.display = "none";
+				emailInvalidWarning.style.display = "block";
+			}
+			if(nameField.value && emailField.value && validEmail){
+				clearInputs();
+				successMessage.style.display = "block";
+				setTimeout(()=>{successMessage.style.display="none"},3000)
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box !important;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
+input{
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.container{
+    width:90%;
+    margin: auto;
+}
+
+.filter_section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:2rem 0;
+}
+
+.filter__search_bar{
+    display: flex;
+    align-items: center;
+    background-color: #E8E6E6;
+    border-radius:0.2rem;
+    overflow: hidden;
+    padding:0.5rem
+}
+
+.filter__search_string{
+    color:#555555;
+    text-decoration: underline;
+}
+
+.filter__search_bar input{
+    background-color: #E8E6E6;
+    border:0;
+    outline: none;
+    padding:0.5rem 1rem;
+    width:500px;
+}
+
+.countryData_table{
+    width:100%;
+    margin:0.5rem 0;
+}
+
+.countryData_table__head, .countryData_table__body{
+    width:100%;
+    display: table;
+}
+
+.countryData_table__head th{
+    background-color: #2F4858;
+    color:white;
+    padding:0.7rem;
+    width:25%;
+}
+
+.countryData_table__body tr td{
+    padding:0.7rem;
+    text-align: center;
+    width:25%;
+}
+
+.countryData_table__body tr:nth-of-type(odd) td{
+    background-color: #D6EDFC;
+}
+.countryData_table__body tr:nth-of-type(even) td{
+    background-color: #A3DBFF;
+}
+
+.empty-msg {
+    display: none;
+    text-align: center;
+    font-size: 1.3rem;
+}

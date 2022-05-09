@@ -1,0 +1,115 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+textarea,input,button{
+	font-family: inherit;
+	font-size: 16px;
+}
+
+
+body{
+	min-height: 100vh;
+	font-family: "Poppins",sans-serif;
+}
+
+.heading{
+	text-align: center;
+	font-weight: 700;
+	font-size: 2em;
+	padding: 0.5em;
+}
+
+.flexbox__container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: auto;
+}
+
+.modal__card{
+	width: 275px;
+	height: 235px;
+	background: white;
+	margin: 1rem;
+	display: inline-block;
+	text-align: center;
+	/*border: 2px solid black;*/
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 0 2px 1px #C4C4C4;
+}
+
+.modal__card:hover{
+	transform: scale(1.05);
+	box-shadow: 0 0 2px 1px #555;
+}
+
+.card__image{
+	width: 100%;
+	height: 85%;
+}
+
+.card__head{
+	width: 100%;
+	height: 10%;
+	background: white;
+	color: black;
+	font-weight: 700;
+}
+
+#modal__container{
+	min-width: 100%;
+	min-height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
+.modal__content{
+	width: 900px;
+	height: 500px;
+	background: white;
+	position: relative;
+	display: flex;
+}
+
+.modal__close_mark{
+	position: absolute;
+	right: 1rem;
+	top: 0.5rem;
+	font-size: 3em;
+}
+
+#modal__img,#modal__article{
+	width: 50%;
+	height: 100%;
+}
+
+#modal__article{
+	padding: 1em;
+}
+
+#modal__article_head{
+	width: 100%;
+	font-size: 1.5em;
+	padding: 0.5em 0;
+	font-weight: 700;
+}
+
+#modal__article_content{
+	width: 100%;
+	min-height: 50px;
+	text-align: justify;
+}
+
+.modal__close_mark{
+	cursor: pointer;
+}

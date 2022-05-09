@@ -1,0 +1,79 @@
+<!-- TIC-TAC-TOE(INTERMEDIATE PROJECT) -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TIC-TAC-TOE</title>
+	<!-- linking google fonts : Poppins -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+	<!-- linking style sheets -->
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<!-- Linking js script files -->
+	<script src="./script.js" defer></script>
+</head>
+<body>
+	<h2 class="heading">TIC - TAC - TOE</h2>
+	<div class="game">
+		<div class="game__stats">
+			<div class="game__rounds">Number of Rounds Played: <span id="game__count"></span></div>
+			<table class="game__score_card">
+				<tr>
+					<th>Score</th>
+					<td>W</td>
+					<td>D</td>
+				</tr>
+				<tr>
+					<td>Player X</td>
+					<td id="x_wins"></td>
+					<td id="x_draws"></td>
+				</tr>
+				<tr>
+					<td>Player O</td>
+					<td id="o_wins"></td>
+					<td id="o_draws"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="game__board">
+			<div class="game_board__row">
+				<button class="game_board__tile" onclick="makeMove(0)"></button>
+				<button class="game_board__tile" onclick="makeMove(1)"></button>
+				<button class="game_board__tile" onclick="makeMove(2)"></button>
+			</div>
+			<div class="game_board__row">
+				<button class="game_board__tile" onclick="makeMove(3)"></button>
+				<button class="game_board__tile" onclick="makeMove(4)"></button>
+				<button class="game_board__tile" onclick="makeMove(5)"></button>
+			</div>
+			<div class="game_board__row">
+				<button class="game_board__tile" onclick="makeMove(6)"></button>
+				<button class="game_board__tile" onclick="makeMove(7)"></button>
+				<button class="game_board__tile" onclick="makeMove(8)"></button>
+			</div>
+			
+			<div id="game__winner_modal" class="game__winner_modal">
+				<div class="winner__message">
+					<div>
+						<div class="message"></div>
+						<div id="winner"></div>
+					</div>
+				</div>
+			</div> 
+		</div>
+		<div class="game__utils">
+			<div class="game__controls">
+				<h3 class="game__subheadings">Game Controls</h3>
+				<button class="controls__button" onclick="undo()">Undo</button>
+				<button class="controls__button" onclick="restart()">Restart</button>
+				<button class="controls__button" onclick="newSession()">New Session</button>
+			</div>
+			<div class="game__winning">
+				<h3 class="game__subheadings">Currently Winning</h3>
+				<div id="game__winning"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
