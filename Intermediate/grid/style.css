@@ -56,17 +56,20 @@ body{
     column-gap:2rem ;
 }
 
-.facts__fact{
+.fact{
     background-color: #5C002E;
     border-radius: 0.7rem;
     position: relative;
 }
 
-.fact_number{
+.fact__number{
     background-color: #810342;
     position: absolute;
-    display: inline;
-    padding:1rem 1.5rem;
+    display: flex;
+    width:3.5rem;
+    height:3.5rem;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     left:2rem;
     top: 0%;
@@ -74,6 +77,6 @@ body{
     font-weight: bold;
 }
 
-.fact_text{
+.fact__text{
     padding:2.5rem 2rem;
 }
